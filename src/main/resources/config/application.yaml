@@ -1,0 +1,47 @@
+spring:
+  security:
+    jwtSecret: 'jHSecretKey'
+    jwtExpirationMs: 86400000
+  datasource:
+    username: ${DEV_DB_USERNAME}
+    password: ${DEV_DB_PASSWORD}
+    url: jdbc:mysql://188.68.236.142:3306/jhaberka?useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Europe/Warsaw
+  jpa:
+    hibernate:
+      ddl-auto: 'create-drop'
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: true
+    show-sql: true
+  profiles:
+    active: dev
+  server:
+    port: 8080
+
+mail:
+  host: localhost
+  port: 1025
+  username: hello
+  password: hello
+  properties:
+    mail:
+      smtp:
+        ssl:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+thymeleaf:
+  cache: false
+platform:
+  url: http://localhost:8080
+  name:
+    front: MyApp
+    panel: MyApp
+  replyToEmail: haxxu@onet.pl
+  fromEmail: MyApp / LocalHost <haxxu@onet.pl>
+tokenValidityTimeInMinutes: 30
