@@ -1,0 +1,15 @@
+<div>
+  <h2>User Registration</h2>
+  <form (submit)="registerUser()">
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="newUser.email" [ngModelOptions]="{ standalone: true }" required>
+
+    <label>Username:</label>
+    <input type="text" [(ngModel)]="newUser.username" [ngModelOptions]="{ standalone: true }" required>
+
+    <label>Password:</label>
+    <input type="password" [(ngModel)]="newUser.password" [ngModelOptions]="{ standalone: true }" required>
+
+    <button type="submit">Register</button>
+  </form>
+</div>
